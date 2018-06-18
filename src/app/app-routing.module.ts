@@ -14,7 +14,7 @@ const routes: Routes = [
     }, {
         path: 'patients',
         component: PatientsComponent
-    },{
+    }, {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'
@@ -49,7 +49,7 @@ const routes: Routes = [
         path: 'myapp',
         loadChildren: 'app/myapp/myapp.module#MyappModule'
     },
-    
+
 ];
 
 @NgModule({
