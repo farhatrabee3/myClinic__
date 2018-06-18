@@ -1,12 +1,48 @@
-<p>
-  patients works!
-</p>
-
-<div class="row">
-  <div class="col-md-6">
-    <app-employee></app-employee>
+<section class="content">
+  <div class="block-header">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-12">
+        <h2>Patients
+          <small>Welcome to Oreo</small>
+        </h2>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <ul class="breadcrumb float-md-right">
+          <li class="breadcrumb-item"><a routerLink="/dashboard"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+          <li class="breadcrumb-item active"><a routerLink="patients">Patients</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6">
-    <app-employee-list></app-employee-list>
+  <div class="container-fluid">
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2><strong>Patients</strong> List </h2>
+            <ul class="header-dropdown">
+              <li class="remove">
+                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="body">
+            <div class="row clearfix">
+              <div class="col-md-12">
+                <p>
+                  patients works!
+                </p>
+              </div>
+              <div class="col-md-6">
+                <app-patient></app-patient>
+              </div>
+              <div class="col-md-6">
+                <app-patient-list></app-patient-list>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
