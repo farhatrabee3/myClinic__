@@ -1,0 +1,64 @@
+<form class="appointment-form" #appointmentForm="ngForm" (ngSubmit)="onSubmit(appointmentForm)">
+    <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="appointmentService.selectedAppointment.Id">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" name="VisitReason" #VisitReason="ngModel" [(ngModel)]="appointmentService.selectedAppointment.VisitReason"
+          placeholder="Visit Reason" required>
+        <div class="validation-error" *ngIf="VisitReason.invalid && VisitReason.touched">This Field is Required.</div>
+      </div>
+      <div class="form-group col-md-6">
+          <input class="form-control" name="ExistingPatient" #ExistingPatient="ngModel" [(ngModel)]="appointmentService.selectedAppointment.ExistingPatient"
+            placeholder="Patient Name" required>
+          <div class="validation-error" *ngIf="ExistingPatient.invalid && ExistingPatient.touched">This Field is Required.</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="zmdi zmdi-calendar"></i>
+                </span>
+                <input type="text" class="form-control datetimepicker" name="Date" #Date="ngModel" [(ngModel)]="appointmentService.selectedAppointment.Date" placeholder="Please choose date & time...">
+            </div>
+        </div>
+      <!--<input class="form-control" name="Position" #Position="ngModel" [(ngModel)]="appointmentService.selectedAppointment.Position" placeholder="Position">-->
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+              <select class="form-control show-tick" name="VisitType" #VisitType="ngModel" [(ngModel)]="appointmentService.selectedAppointment.VisitType">
+              <option value="">- Visit Type -</option>
+                  <option value="10">FollowUp</option>
+                  <option value="20">Visit</option>
+                  <option value="30">Vaccine</option>
+              </select>
+        
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <button [disabled]="!appointmentForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+          <i class="fa fa-floppy-o"></i> Submit</button>
+      </div>
+      <div class="form-group col-md-4">
+        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(appointmentForm)">
+          <i class="fa fa-repeat"></i> Reset</button>
+      </div>
+    </div>
+  </form>

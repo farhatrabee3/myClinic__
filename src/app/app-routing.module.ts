@@ -1,22 +1,32 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+//import { AppointmentComponent } from './appointment/appointment.component';
 import { PatientsComponent } from './patients/patients.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { EmployeesComponent } from './employees/employees.component';
+import {SigninComponent} from './authentication/signin/signin.component'
 
 const routes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent
-    }, {
-        path: 'appointment',
-        component: AppointmentComponent
-    }, {
+    }, //{
+        //path: 'appointment',
+       // component: AppointmentComponent
+    //},
+     {
         path: 'patients',
         component: PatientsComponent
+    },{
+        path: 'appointments',
+        component: AppointmentsComponent
+    }, {
+        path: 'employees',
+        component: EmployeesComponent
     }, {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: '/authentication/signin',
         pathMatch: 'full'
     }, {
         path: 'doctors',

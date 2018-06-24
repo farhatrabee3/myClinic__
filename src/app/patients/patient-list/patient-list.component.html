@@ -1,16 +1,17 @@
-<p>
-  Patients List
-</p>
-
 <table class="table table-sm table-hover">
   <tr *ngFor="let patient of patientService.patientList">
-    <td>{{patient.fisrtName}} - {{patient.lastName}}</td>
+    <td>{{patient.FisrtName}} - {{patient.LastName}}</td>
+    <td>{{patient.Mobile}}</td>
     <td>
-      <a class="btn" (click)="showForEdit(patient)">
-        <i class="fa fa-pencil-square-o"></i>
+       <!-- <a class="btn" (click)="showForEdit(patient)">-->
+      <a (click)="showForEdit(patient)">
+       <!--<i class="fa fa-pencil-square-o"></i>-->
+		<i class="material-icons">edit</i>
       </a>
-      <a class="btn text-danger" (click)="onDelete(patient.id)">
-        <i class="fa fa-trash-o"></i>
+      <!--<a class="btn text-danger" (click)="onDelete(patient.Id)">-->
+          <a (click)="onDelete(patient.Id)">
+        <!--<i class="fa fa-trash-o"></i>-->
+		<i class="material-icons">delete</i>
       </a>
     </td>
   </tr>

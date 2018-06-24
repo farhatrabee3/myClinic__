@@ -15,6 +15,9 @@ export class SigninComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        $("#leftsidebar").remove();
+        $(".navbar p-l-5 p-r-5").remove();
+        
         $('body').addClass('authentication sidebar-collapse');
         $(".navbar-toggler").on('click',function() {
             $("html").toggleClass("nav-open");

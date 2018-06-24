@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr'
 })
 export class PatientComponent implements OnInit {
  
-  constructor(public patientService: PatientService, private toastr: ToastrService) { }
+  constructor(private patientService: PatientService, private toastr: ToastrService) { }
  
   ngOnInit() {
     this.resetForm();
@@ -20,30 +20,17 @@ export class PatientComponent implements OnInit {
     if (form != null)
       form.reset();
     this.patientService.selectedPatient = {
-      id: '',
-      fisrtName: '',
-      lastName: '',
-      lastVisit: '',
-      doctorId: '',
-	    courtesyTitle :  '' ,
-	    country :  '' ,
-	    dob :  '' ,
-	    maritalStatus :  '' ,
-	    gender :  '' ,
-	    nationality :  '' ,
-	    secondNationality : '',
-	   email :  '' ,
-	   mobile :  '' ,
-	   phone : '',
-	   hasInsurance :  '' ,
-	   doctor : null,
-	   description :  '',
-	   parentInfo : null
+      Id: null,
+      FisrtName:'',
+      DoctorId:1,
+      LastName: '',
+      Description: '',
+      Mobile: ''
     }
   }
  
   onSubmit(form: NgForm) {
-    if (form.value.id == null) {
+    if (form.value.Id == null) {
       this.patientService.postPatient(form.value)
         .subscribe(data => {
           this.resetForm(form);
@@ -52,7 +39,7 @@ export class PatientComponent implements OnInit {
         })
     }
     else {
-      this.patientService.putPatient(form.value.id, form.value)
+      this.patientService.putPatient(form.value.PatientID, form.value)
       .subscribe(data => {
         this.resetForm(form);
         this.patientService.getPatientList();
@@ -61,4 +48,3 @@ export class PatientComponent implements OnInit {
     }
   }
 }
-

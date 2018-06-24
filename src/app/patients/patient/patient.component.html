@@ -1,41 +1,27 @@
-<p>
-  Patient
-</p>
 <form class="emp-form" #patientForm="ngForm" (ngSubmit)="onSubmit(patientForm)">
-  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="patientService.selectedPatient.id">
+  <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="patientService.selectedPatient.Id">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <input class="form-control" name="fisrtName" #fisrtName="ngModel" [(ngModel)]="patientService.selectedPatient.fisrtName"
+      <input class="form-control" name="FisrtName" #FisrtName="ngModel" [(ngModel)]="patientService.selectedPatient.FisrtName"
         placeholder="First Name" required>
-      <div class="validation-error" *ngIf="fisrtName.invalid && fisrtName.touched">This Field is Required.</div>
+      <div class="validation-error" *ngIf="FisrtName.invalid && FisrtName.touched">This Field is Required.</div>
     </div>
     <div class="form-group col-md-6">
-      <input class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="patientService.selectedPatient.lastName" placeholder="Last Name"
+      <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="patientService.selectedPatient.LastName" placeholder="Last Name"
         required>
-      <div class="validation-error" *ngIf="lastName.invalid && lastName.touched">This Field is Required.</div>
+      <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This Field is Required.</div>
     </div>
-    <div class="form-group col-md-6">
-      <input class="form-control" name="lastVisit" #lastVisit="ngModel" [(ngModel)]="patientService.selectedPatient.lastVisit" placeholder="Last Visit"
-        required>
-      <div class="validation-error" *ngIf="lastVisit.invalid && lastVisit.touched">This Field is Required.</div>
-    </div>
-    <div class="form-group col-md-6">
-      <input class="form-control" name="doctorId" #doctorId="ngModel" [(ngModel)]="patientService.selectedPatient.doctorId" placeholder="Doctor Id"
-        required>
-      <div class="validation-error" *ngIf="doctorId.invalid && doctorId.touched">This Field is Required.</div>
-    </div>
-  </div>
-  <!--<div class="form-group">
-    <input class="form-control" name="Position" #Position="ngModel" [(ngModel)]="patientService.selectedPatient.Position" placeholder="Position">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <input class="form-control" name="EmpCode" #EmpCode="ngModel" [(ngModel)]="patientService.selectedPatient.EmpCode" placeholder="Emp Code">
-    </div>
+    <input class="form-control" name="Description" #Description="ngModel" [(ngModel)]="patientService.selectedPatient.Description" placeholder="Description">
+  </div>
+</div>
+  <div class="form-row">
     <div class="form-group col-md-6">
-      <input class="form-control" name="Office" #Office="ngModel" [(ngModel)]="patientService.selectedPatient.Office" placeholder="Office">
+      <input class="form-control" name="Mobile" #Mobile="ngModel" [(ngModel)]="patientService.selectedPatient.Mobile" placeholder="Patient Mobile">
     </div>
-  </div>-->
+  </div>
   <div class="form-row">
     <div class="form-group col-md-4">
       <button [disabled]="!patientForm.valid" type="submit" class="btn btn-lg btn-block btn-info">

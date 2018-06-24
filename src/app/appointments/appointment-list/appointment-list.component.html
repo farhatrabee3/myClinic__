@@ -1,0 +1,13 @@
+<table class="table table-sm table-hover">
+    <tr *ngFor="let appointment of appointmentService.appointmentList">
+      <td>{{appointment.ExistingPatient}} - {{appointment.Date}}</td>
+      <td>
+        <a class="btn" (click)="showForEdit(appointment)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger" (click)="onDelete(appointment.Id)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
+  </table>
