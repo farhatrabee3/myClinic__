@@ -22,12 +22,12 @@ export class EmployeeComponent implements OnInit {
     if (form != null)
       form.reset();
     this.employeeService.selectedEmployee = {
-      EmployeeID: null,
-      FirstName: '',
-      LastName: '',
-      EmpCode: '',
-      Position: '',
-      Office: ''
+      employeeID: 0,
+      firstName: '',
+      lastName: '',
+      empCode: '',
+      position: '',
+      office: ''
     }
   }
  

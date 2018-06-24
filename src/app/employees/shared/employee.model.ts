@@ -1,8 +1,8 @@
 export class Employee {
-    EmployeeID : number;
-    FirstName:string;
-    LastName:string;
-    EmpCode:string;
-    Position:string;
-    Office:string;
+    employeeID : number;
+    firstName:string;
+    lastName:string;
+    empCode:string;
+    position:string;
+    office:string;
 }

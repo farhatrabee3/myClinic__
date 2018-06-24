@@ -1,35 +1,37 @@
 <form class="emp-form" #patientForm="ngForm" (ngSubmit)="onSubmit(patientForm)">
-  <input type="hidden" name="Id" #Id="ngModel" [(ngModel)]="patientService.selectedPatient.Id">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input class="form-control" name="FisrtName" #FisrtName="ngModel" [(ngModel)]="patientService.selectedPatient.FisrtName"
-        placeholder="First Name" required>
-      <div class="validation-error" *ngIf="FisrtName.invalid && FisrtName.touched">This Field is Required.</div>
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="patientService.selectedPatient.id">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input class="form-control" name="firstName" #firstName="ngModel" [(ngModel)]="patientService.selectedPatient.firstName"
+              placeholder="First Name" required>
+            <div class="validation-error" *ngIf="firstName.invalid && firstName.touched">This Field is Required.</div>
+          </div>
+
+          <div class="form-group col-md-6">
+              <input class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="patientService.selectedPatient.lastName"
+                placeholder="Last Name" required>
+              <div class="validation-error" *ngIf="lastName.invalid && lastName.touched">This Field is Required.</div>
+            </div>
+       
+      </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <input class="form-control" name="description" #description="ngModel" [(ngModel)]="patientService.selectedPatient.description" placeholder="Description">
+      </div>
     </div>
-    <div class="form-group col-md-6">
-      <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="patientService.selectedPatient.LastName" placeholder="Last Name"
-        required>
-      <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This Field is Required.</div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input class="form-control" name="mobile" #mobile="ngModel" [(ngModel)]="patientService.selectedPatient.mobile" placeholder="Patient Mobile">
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <button [disabled]="!patientForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+          <i class="fa fa-floppy-o"></i> Submit</button>
+      </div>
+      <div class="form-group col-md-4">
+        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(patientForm)">
+          <i class="fa fa-repeat"></i> Reset</button>
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-    <input class="form-control" name="Description" #Description="ngModel" [(ngModel)]="patientService.selectedPatient.Description" placeholder="Description">
-  </div>
-</div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input class="form-control" name="Mobile" #Mobile="ngModel" [(ngModel)]="patientService.selectedPatient.Mobile" placeholder="Patient Mobile">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <button [disabled]="!patientForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
-        <i class="fa fa-floppy-o"></i> Submit</button>
-    </div>
-    <div class="form-group col-md-4">
-      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(patientForm)">
-        <i class="fa fa-repeat"></i> Reset</button>
-    </div>
-  </div>
-</form>
+  </form>

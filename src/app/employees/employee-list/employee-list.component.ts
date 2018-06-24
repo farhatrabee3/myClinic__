@@ -13,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService: EmployeeService,private toastr : ToastrService) { }
  
   ngOnInit() {
-    this.employeeService.getEmployeeList();
+    console.log(this.employeeService.getEmployeeList());
   }
  
   showForEdit(emp: Employee) {
@@ -26,7 +26,7 @@ export class EmployeeListComponent implements OnInit {
       this.employeeService.deleteEmployee(id)
       .subscribe(x => {
         this.employeeService.getEmployeeList();
-        this.toastr.warning("Deleted Successfully","Employee Register");
+        this.toastr.warning("Deleted Successfully","Employee Deleted");
       })
     }
   }

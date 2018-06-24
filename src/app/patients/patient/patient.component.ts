@@ -20,12 +20,12 @@ export class PatientComponent implements OnInit {
     if (form != null)
       form.reset();
     this.patientService.selectedPatient = {
-      Id: null,
-      FisrtName:'',
-      DoctorId:1,
-      LastName: '',
-      Description: '',
-      Mobile: ''
+      id: 0,
+      firstName:'',
+      doctorId: 1,
+      lastName: '',
+      description: '',
+      mobile: ''
     }
   }
  

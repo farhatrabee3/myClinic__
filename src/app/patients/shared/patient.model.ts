@@ -1,8 +1,8 @@
 export class Patient {
-	Id : number;
-          Description :string;
-          DoctorId :number;
-          FisrtName :string;
-          LastName :string;
-          Mobile :string;
+	id : number;
+    description :string;
+    doctorId :number;
+    firstName :string;
+    lastName :string;
+    mobile :string;
 }
